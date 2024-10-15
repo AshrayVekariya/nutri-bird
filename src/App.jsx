@@ -5,7 +5,6 @@ import OurFormula from './view/our-formula/Index';
 import OurGoal from './view/our-goal/Index';
 import Website from './view/website/Index';
 import './App.css';
-import Demo from './view/demo/demo';
 
 const App = () => {
   return (
@@ -16,7 +15,6 @@ const App = () => {
       <OurFormula />
       <OurGoal />
       <Website />
-      <Demo />
     </div>
   );
 }
