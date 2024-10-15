@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    overflow-x: hidden;
+    background-color: #eceded;
+}
+body:before {
+    left: 0;
+    background: linear-gradient(90deg, #c4c4c3, rgba(196, 196, 195, 0));
+}
+body:after {
+    right: 0;
+    background: linear-gradient(-90deg, #c4c4c3, rgba(196, 196, 195, 0));
+}
+.app:before {
+    top: 0;
+    background: linear-gradient(180deg, #c4c4c3, rgba(196, 196, 195, 0));
+}
+.app:after {
+    bottom: 0;
+    background: linear-gradient(0deg, #c4c4c3, rgba(196, 196, 195, 0));
+}
