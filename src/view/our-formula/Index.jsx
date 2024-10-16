@@ -44,9 +44,9 @@ const OurFormula = () => {
         loader.load(parrotModel, (gltf) => {
             const bird = gltf.scene;
             birdRef.current = bird;
-            bird.position.set(6, -2.5, 0);
+            bird.position.set(5.5, -10, 0);
             bird.rotation.set(0.05, -1.6, 0);
-            bird.scale.set(0.110, 0.110, 0.110);
+            bird.scale.set(0.140, 0.140, 0.140);
             scene.add(bird);
 
             const onMouseMove = (e) => {
@@ -89,12 +89,12 @@ const OurFormula = () => {
 
 
                 if (rect.top < 300 && rect.bottom > 0) {
-                    const direction = currentScrollY > scrollYRef.current ? 1 : -1;
+                    const direction = currentScrollY > scrollYRef.current ? 1 : -1.5;
 
                     let positionY = birdRef.current.position.y;
                     positionY += direction * 0.2;
 
-                    positionY = Math.max(-3, Math.min(positionY, 3));
+                    positionY = Math.max(-4, Math.min(positionY, 4));
 
                     gsap.to(birdRef.current.position, {
                         y: positionY,
