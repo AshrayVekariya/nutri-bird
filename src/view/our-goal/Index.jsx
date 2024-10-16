@@ -52,7 +52,7 @@ const OurGoal = () => {
                 gsap.to(parrotRef.current.position, {
                     x: translateX,
                     y: translateY,
-                    duration: 0.5,
+                    duration: 1,
                     ease: 'power2.out',
                 });
             }

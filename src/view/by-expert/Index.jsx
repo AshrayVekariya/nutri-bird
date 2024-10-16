@@ -15,7 +15,7 @@ const ByExpert = () => {
         const renderer = new THREE.WebGLRenderer();
         renderer.setClearColor(0x000000, 0);
 
-        renderer.setSize(window.innerWidth, 1800);
+        renderer.setSize(window.innerWidth, 1500);
         mountRef.current.appendChild(renderer.domElement);
 
         const ambientLight = new THREE.AmbientLight(0x404040);
@@ -31,7 +31,7 @@ const ByExpert = () => {
             parrotRef.current = gltf.scene;
 
             parrotRef.current.position.set(-50, 1, 0);
-            parrotRef.current.scale.set(0.07, 0.07, 0.07);
+            parrotRef.current.scale.set(0.09, 0.09, 0.09);
             parrotRef.current.rotation.set(0, 1.3, 0);
 
             scene.add(parrotRef.current);
