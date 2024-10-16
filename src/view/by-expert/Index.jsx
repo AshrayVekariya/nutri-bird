@@ -15,7 +15,7 @@ const ByExpert = () => {
         const renderer = new THREE.WebGLRenderer();
         renderer.setClearColor(0x000000, 0);
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, 1800);
         mountRef.current.appendChild(renderer.domElement);
 
         const ambientLight = new THREE.AmbientLight(0x404040);
@@ -30,9 +30,9 @@ const ByExpert = () => {
         loader.load(parrotImg, (gltf) => {
             parrotRef.current = gltf.scene;
 
-            parrotRef.current.scale.set(0.11, 0.11, 0.11);
+            parrotRef.current.position.set(-50, 1, 0);
+            parrotRef.current.scale.set(0.07, 0.07, 0.07);
             parrotRef.current.rotation.set(0, 1.3, 0);
-            parrotRef.current.position.set(-100, 2, 0);
 
             scene.add(parrotRef.current);
             mixerRef.current = new THREE.AnimationMixer(gltf.scene);
@@ -43,21 +43,16 @@ const ByExpert = () => {
         camera.position.z = 5;
 
         const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const totalHeight = document.body.scrollHeight - windowHeight;
             const rect = mountRef.current.getBoundingClientRect();
 
-            const scrollPercentage = scrollY / totalHeight;
+            const translateX = -(rect.y / rect.height) * 20;
+            const translateY = (rect.y / rect.height) * 5;
 
-            const translateX = (scrollPercentage * 600 - 100) * 0.2;
-            const translateY = -(scrollPercentage * 400 - 50) * 0.2;
-
-            if (rect.top < 400) {
+            if (parrotRef.current) {
                 gsap.to(parrotRef.current.position, {
-                    x: translateX,
-                    y: translateY / 7,
-                    duration: 0.5,
+                    x: translateX - 5,
+                    y: translateY + 1,
+                    duration: 0.3,
                     ease: 'power2.out',
                 });
             }
@@ -93,16 +88,19 @@ const ByExpert = () => {
 
     return (
         <>
-            <div ref={mountRef} className='relative mb-[300px]'>
-                <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-5]'>
-                    <div className='container mx-auto px-5'>
+            <div ref={mountRef} className='relative'>
+                <div className='absolute w-full top-0 z-[-5]'>
+                    <div className='container mx-auto px-10 mt-[300px]'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full'>
                             <div></div>
                             <div>
-                                <h1 className='text-4xl md:text-5xl lg:text-8xl	font-bold'>We are NutriBird</h1>
-                                <p className='text-md md:text-xl mt-10'>We are NutriBird, for bird owners to carefree give the best to their birds. We’re obsessed with making birds look and perform at their best. We specialise in complete and balanced all-in-one nutrition formulas for all bird species, at every life stage.</p>
+                                <h1 className='text-3xl md:text-5xl lg:text-[3.333vw] lg:max-w-[736px] font-bold'>YOUR BIRDS AT THEIR BEST, BACKED BY EXPERTS</h1>
+                                <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium mt-10'>From canaries and parrots to toucans and hornbills. Making the right choice
+                                    in bird nutrition is a vital step in fulfilling the needs of your birds. You want
+                                    them to look and perform at their best. At every stage in their lives. But
+                                    where do you start? With NutriBird.</p>
                             </div>
-                            <div className='mt-[250px] text-md md:text-xl'>
+                            <div className='pt-[322px] text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium mt-10'>
                                 <p>I have been an aviculturist for 45 years. Birds are my passion; they are my reason for living. I always provide them with the best care and food possible. Each day I rely on NutriBird to keep them healthy. NutriBird is nutritious, based on science and produced by a company that mills the product - they don't rely on others to produce it for them. This gives me the confidence to give NutriBird to my flock, which ranges from parakeets to hyacinth macaws to palm cockatoos.</p>
                             </div>
                         </div>

@@ -103,13 +103,13 @@ const Website = () => {
     return (
         <>
             <div ref={mountRef} className='relative'>
-                <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-5]'>
-                    <div className='container mx-auto px-5'>
+                <div className='absolute w-full top-0 z-[-5] mt-[150px]'>
+                    <div className='container mx-auto px-10'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                             <div></div>
                             <div>
-                                <h1 className='text-4xl md:text-5xl lg:text-8xl	font-bold'>Are you ready to let your birds shine?</h1>
-                                <p className='text-sm md:text-xl mt-10'>Discover the new NutriBird at www.versele-laga.com/nutribird or in your pet shop.</p>
+                                <h1 className='text-3xl md:text-5xl lg:text-[3.333vw] font-bold'>ARE YOU READY TO LET YOUR BIRDS SHINE?</h1>
+                                <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium mt-10'>Discover the new NutriBird at www.versele-laga.com/nutribird or in your pet shop.</p>
                             </div>
                         </div>
                     </div>

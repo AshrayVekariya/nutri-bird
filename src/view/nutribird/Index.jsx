@@ -38,7 +38,7 @@ function BirdScene() {
         const loader = new GLTFLoader();
         loader.load(lovebirds, (gltf) => {
             const bird = gltf.scene;
-            bird.position.set(5, -0.5, 0);
+            bird.position.set(6, -0.6, 0);
             bird.rotation.set(0.05, -1.2, 0);
             bird.scale.set(0.22, 0.24, 0.25);
             scene.add(bird);
@@ -67,12 +67,12 @@ function BirdScene() {
             );
 
             const onMouseMove = (e) => {
-                cursor.x = -(e.clientX / window.innerWidth - 0.5) * 0.2;
-                cursor.y = (e.clientY / window.innerHeight - 0.5) * 0.2;
+                cursor.x = -(e.clientX / window.innerWidth - 0.5) * 0.04;
+                cursor.y = (e.clientY / window.innerHeight - 0.5) * 0.04;
 
                 gsap.from(camera.position, {
-                    x: cursor.x * 5,
-                    y: cursor.y * 5,
+                    x: cursor.x * 2,
+                    y: cursor.y * 2,
                     duration: 3,
                     ease: 'power2.out'
                 });
@@ -104,12 +104,17 @@ function BirdScene() {
     return (
         <>
             <div ref={mountRef} className='relative h-screen'>
-                <div className='absolute w-full top-[25%] md:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-3]'>
-                    <div className='container mx-auto px-5'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full'>
-                            <div>
-                                <h1 className='text-4xl md:text-5xl lg:text-8xl	font-bold'>WE ARE NUTRIBIRD</h1>
-                                <p className='text-sm md:text-xl mt-10'>We are NutriBird, for bird owners to carefree give the best to their birds. We’re obsessed with making birds look and perform at their best. We specialise in complete and balanced all-in-one nutrition formulas for all bird species, at every life stage.</p>
+                <div className='absolute w-full top-0 z-[-3]'>
+                    <div className='container mx-auto px-10'>
+                        <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 w-full'>
+                            <div className='pt-[110px] md:pt-[11.51vw]'>
+                                <h1 className='text-[40px] leading-[42px] md:text-[58px] lg:text-[4.792vw] md:leading-[78px] lg:leading-[5.313vw] lg:max-w-[50%] font-bold'>WE ARE NUTRIBIRD</h1>
+                                <div className='mt-5 md:mt-10'>
+                                    <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium'>We are NutriBird, for bird owners to carefree give the best to</p>
+                                    <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium'>their birds. We’re obsessed with making birds look and perform</p>
+                                    <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium'>at their best. We specialise in complete and balanced all-in-one</p>
+                                    <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium'>nutrition formulas for all bird species, at every life stage.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import parrotModel from '../../assets/our-formula/toucan.glb';
+import breeding from '../../assets/our-formula/breeding.svg';
+import formula from '../../assets/our-formula/formula.svg';
+import growth from '../../assets/our-formula/growth.svg';
+import maintenance from '../../assets/our-formula/maintenance.svg';
 import { gsap } from 'gsap';
 
 const OurFormula = () => {
@@ -39,10 +43,10 @@ const OurFormula = () => {
         const loader = new GLTFLoader();
         loader.load(parrotModel, (gltf) => {
             const bird = gltf.scene;
-            birdRef.current = bird; 
-            bird.position.set(6, -2, 0);
+            birdRef.current = bird;
+            bird.position.set(6, -2.5, 0);
             bird.rotation.set(0.05, -1.6, 0);
-            bird.scale.set(0.100, 0.100, 0.100);
+            bird.scale.set(0.110, 0.110, 0.110);
             scene.add(bird);
 
             const onMouseMove = (e) => {
@@ -116,16 +120,28 @@ const OurFormula = () => {
     return (
         <>
             <div className="relative h-[100vh]">
-                <div className="relative h-48 md:h-64 w-full overflow-hidden">
+                <div className="absolute h-48 md:h-64 w-full overflow-hidden z-[-1]">
                     <div className="absolute left-0 top-[-10vh] transform scale-125 -rotate-[5deg] bg-[#30302f] w-full h-32 md:h-48"></div>
                 </div>
                 <div ref={mountRef}>
-                    <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                        <div className='container mx-auto px-5'>
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                                <div className='pt-[15vh]'>
-                                    <h1 className='text-4xl md:text-5xl lg:text-8xl font-bold'>Perfectly balanced for every bird</h1>
-                                    <p className='text-md md:text-xl mt-10 w-full md:w-96'>Our NutriBird formula guarantees a balanced nutrition for every bird at every stage of life.</p>
+                    <div className='absolute w-full'>
+                        <div className='container mx-auto px-10'>
+                            <div className='grid grid-cols-1 gap-4'>
+                                <div className='pt-[400px]'>
+                                    <div>
+                                        <h1 className='text-3xl md:text-5xl lg:text-[3.333vw] font-bold lg:max-w-[40%]'>PERFECTLY BALANCED FOR EVERY BIRD</h1>
+                                        <p className='text-[14px] lg:text-[1.146vw] leading-6 lg:leading-[1.906vw] font-medium mt-10 w-full md:w-96'>Our NutriBird formula guarantees a balanced nutrition for every bird at every stage of life.</p>
+                                    </div>
+                                    <div className='flex flex-col lg:flex-row items-center justify-center gap-20 mt-10 lg:mt-[-5.5vw]'>
+                                        <div>
+                                            <img src={formula} alt="formula" height={138} width={138} />
+                                        </div>
+                                        <div>
+                                            <img src={breeding} alt="breeding" height={154} width={301} className='mb-5' />
+                                            <img src={maintenance} alt="maintenance" height={154} width={301} className='mb-5'/>
+                                            <img src={growth} alt="growth" height={154} width={301} className='mb-5'/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div></div>
                             </div>

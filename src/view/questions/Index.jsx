@@ -88,11 +88,11 @@ const Questions = () => {
 
     useEffect(() => {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setClearColor(0x000000, 0);
 
-        renderer.setSize(window.innerWidth, 600);
+        renderer.setSize(window.innerWidth, window.innerHeight);
         mountRef.current.appendChild(renderer.domElement);
 
         // Lighting
@@ -111,7 +111,7 @@ const Questions = () => {
 
             parrotRef.current.scale.set(0.199, 0.199, 0.199);
             parrotRef.current.rotation.set(0, 1.7, 0);
-            parrotRef.current.position.set(-5, -1, 0);
+            parrotRef.current.position.set(-3, -1, 0);
 
             scene.add(parrotRef.current);
             mixerRef.current = new THREE.AnimationMixer(gltf.scene);
@@ -151,10 +151,10 @@ const Questions = () => {
             </div>
             <div className="bg-[#30302f]">
                 <div className="relative pt-[22vh]">
-                    <div className='container mx-auto px-5'>
-                        <h1 className='text-3xl md:text-6xl	font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#86ff49] via-[#02bd40] via-[#00b6b6] via-[#0094c6] to-[#0aa]'>FIND THE RIGHT BIRD NUTRATION <br /> WITH 3 SIMPLE QUESTIONS</h1>
-                        <h2 className='text-2xl md:text-5xl	font-bold text-white mt-16'><span className="text-[#6c3]">01.</span> TYPE OF BIRD?</h2>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16 text-white'>
+                    <div className='container mx-auto px-10'>
+                        <h1 className='text-3xl md:text-5xl lg:text-[3.646vw] font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#86ff49] via-[#02bd40] via-[#00b6b6] via-[#0094c6] to-[#0aa]'>FIND THE RIGHT BIRD NUTRATION <br /> WITH 3 SIMPLE QUESTIONS</h1>
+                        <h2 className='text-xl lg:text-[2.24vw] font-bold text-white mt-10'><span className="text-[#6c3]">01.</span> TYPE OF BIRD?</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 text-white'>
                             {
                                 data.map((items, index) => {
                                     return (
@@ -168,7 +168,7 @@ const Questions = () => {
                                                                 <div className="bg-[#454748] rounded-tr-lg rounded-bl-lg">
                                                                     <img src={bird.image} alt="" height={70} width={70} />
                                                                 </div>
-                                                                <span className="text-sm md:text-xl">{bird.label}</span>
+                                                                <span className="text-sm xl:text-xl">{bird.label}</span>
                                                             </li>
                                                         )
                                                     })
@@ -182,12 +182,12 @@ const Questions = () => {
                     </div>
                 </div>
                 <div ref={mountRef} className="relative z-[5]">
-                    <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                        <div className='container mx-auto px-5'>
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full'>
+                    <div className='absolute w-full top-0'>
+                        <div className='container mx-auto px-10'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-[15vw]'>
                                 <div></div>
                                 <div className="text-white">
-                                    <h1 className='text-2xl md:text-5xl	font-bold'><span className="text-[#6c3]">02.</span> STAGE OF LIFE?</h1>
+                                    <h1 className='text-xl lg:text-[2.24vw] font-bold text-white'><span className="text-[#6c3]">02.</span> STAGE OF LIFE?</h1>
                                     <ul className="mt-10">
                                         <li className="mt-5 flex gap-3 items-center">
                                             <div className="bg-[#454748] rounded-tr-lg rounded-bl-lg">
@@ -213,15 +213,15 @@ const Questions = () => {
                         </div>
                     </div>
                 </div>
-                <div className='relative container mx-auto px-5'>
+                <div className='relative container mx-auto px-10'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 text-white'>
-                        <h2 className='text-2xl md:text-5xl	font-bold text-white'><span className="text-[#6c3]">03.</span> FROM OF NUTRITION?</h2>
+                        <h2 className='text-xl lg:text-[2.24vw] font-bold text-white'><span className="text-[#6c3]">03.</span> FROM OF NUTRITION?</h2>
                         <div>
                             <div className="flex flex-col md:flex-row gap-5">
-                                <span className="border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">PELLETS</span>
-                                <span className="border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">SOFT FOOD</span>
-                                <span className="border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">HAND-REARING</span>
-                                <span className="border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">LIQUIDS</span>
+                                <span className="text-xs border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">PELLETS</span>
+                                <span className="text-xs border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">SOFT FOOD</span>
+                                <span className="text-xs border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">HAND-REARING</span>
+                                <span className="text-xs border-2 border-[#838b95] rounded-tr-lg rounded-bl-lg p-5 w-full text-center">LIQUIDS</span>
                             </div>
                         </div>
                         <div>
@@ -229,11 +229,11 @@ const Questions = () => {
                         </div>
                         <div>
                             <ul className="mt-20 list-disc marker:text-green-600">
-                                <li className="mt-5 mx-5 md:text-2xl">All-in-one, complete and balanced daily nutrition</li>
-                                <li className="mt-5 mx-5 md:text-2xl">Prevents selective eating behaviour</li>
-                                <li className="mt-5 mx-5 md:text-2xl">For seed-, fruit- and insect-eating birds and hornbills</li>
-                                <li className="mt-5 mx-5 md:text-2xl">Available in maintenance and breeding formulas</li>
-                                <li className="mt-5 mx-5 md:text-2xl">Optimal size, shape and ingredients for every bird</li>
+                                <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">All-in-one, complete and balanced daily nutrition</li>
+                                <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Prevents selective eating behaviour</li>
+                                <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">For seed-, fruit- and insect-eating birds and hornbills</li>
+                                <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Available in maintenance and breeding formulas</li>
+                                <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Optimal size, shape and ingredients for every bird</li>
                             </ul>
                         </div>
                     </div>

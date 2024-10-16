@@ -87,21 +87,21 @@ const OurGoal = () => {
 
     return (
         <>
-            <div ref={mountRef} className='relative'>
+            <div ref={mountRef} className='relative mt-[600px]'>
                 <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-5]'>
-                    <div className='container mx-auto px-5'>
+                    <div className='container mx-auto px-10'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full'>
                             <div></div>
                             <div>
-                                <h1 className='text-4xl md:text-5xl lg:text-8xl	font-bold'>Your birds at their best</h1>
+                                <h1 className='text-3xl md:text-5xl lg:text-[2.67vw] font-bold'>YOUR BIRDS AT THEIR BEST</h1>
                                 <div>
                                     <ul className="mt-20 list-disc marker:text-green-600">
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">A complete and extensive range of all-in-one-solutions</li>
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">For all bird species at every stage of life</li>
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">Offered by 1 single brand with many years of experience</li>
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">Quality products</li>
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">Developed by avian vets and nutritionists</li>
-                                        <li className="mt-5 mx-5 text-sm md:text-2xl">Used by top breeders and zoos around the world</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">A complete and extensive range of all-in-one-solutions</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">For all bird species at every stage of life</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Offered by 1 single brand with many years of experience</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Quality products</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Developed by avian vets and nutritionists</li>
+                                        <li className="mx-5 text-[14px] leading-6 lg:text-[1.146vw] lg:leading-[2.448vw]">Used by top breeders and zoos around the world</li>
                                     </ul>
                                 </div>
                             </div>
