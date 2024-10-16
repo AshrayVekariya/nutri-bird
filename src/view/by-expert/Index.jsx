@@ -15,7 +15,7 @@ const ByExpert = () => {
         const renderer = new THREE.WebGLRenderer();
         renderer.setClearColor(0x000000, 0);
 
-        renderer.setSize(window.innerWidth, 1500);
+        renderer.setSize(window.innerWidth, 1400);
         mountRef.current.appendChild(renderer.domElement);
 
         const ambientLight = new THREE.AmbientLight(0x404040);
